@@ -8,7 +8,7 @@ import Schedule from "../components/Schedule";
 import Goals from "../components/Goals";
 import PremiumCard from "../components/PremiumCard";
 
-const DashboardPage = () => {
+const Dashboard = () => {
   return (
     <div className="dashboard">
       {/* LEFT SIDEBAR */}
@@ -41,4 +41,4 @@ const DashboardPage = () => {
   );
 };
 
-export default DashboardPage;
+export default Dashboard;
