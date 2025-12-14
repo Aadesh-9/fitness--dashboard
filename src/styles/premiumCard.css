@@ -131,3 +131,28 @@
   opacity: 0.35;
   pointer-events: none; /* IMPORTANT */
 }
+
+/* ===== PREMIUM CARD MOBILE ===== */
+@media (max-width: 768px) {
+  .premium-card {
+    height: auto;
+    padding: 20px;
+  }
+
+  .premium-content {
+    max-width: 100%;
+  }
+
+  .premium-image-wrapper {
+    width: 100px;
+    height: 100px;
+    bottom: -20px;
+    right: 10px;
+    opacity: 0.25;
+  }
+
+  .upgrade-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

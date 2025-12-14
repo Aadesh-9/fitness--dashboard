@@ -142,3 +142,17 @@
 .dot.steps {
   background: #8b5cf6;
 }
+
+@media (max-width: 768px) {
+  .chart-wrapper {
+    overflow-x: auto;
+  }
+
+  .chart {
+    min-width: 520px; /* allows horizontal scroll */
+  }
+
+  .y-axis {
+    display: none; /* cleaner on mobile */
+  }
+}
