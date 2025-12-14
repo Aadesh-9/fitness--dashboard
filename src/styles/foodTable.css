@@ -66,3 +66,8 @@
     gap: 10px;
   }
 }
+
+.food-header,
+.food-row {
+  width: 100%;
+}

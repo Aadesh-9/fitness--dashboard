@@ -4,25 +4,35 @@ import Banner from "../components/Banner";
 import StatsCards from "../components/StatsCards";
 import GoalProgress from "../components/GoalProgress";
 import FoodTable from "../components/FoodTable";
+import Schedule from "../components/Schedule";
+import Goals from "../components/Goals";
 
 const Dashboard = () => {
   return (
     <div className="dashboard">
+      {/* LEFT SIDEBAR */}
       <Sidebar />
 
-      <div className="content">
+      {/* RIGHT MAIN AREA */}
+      <div className="dashboard-main">
+        {/* FULL WIDTH HEADER */}
         <Header />
 
-        <div className="top-row">
-          <Banner />
-          <div className="schedule-placeholder"></div>
-        </div>
+        {/* BODY */}
+        <div className="dashboard-body">
+          {/* LEFT CONTENT */}
+          <div className="dashboard-left">
+            <Banner />
+            <StatsCards />
+            <GoalProgress />
+            <FoodTable />
+          </div>
 
-        {/* ✅ WIDTH-CONTROLLED COLUMN */}
-        <div className="left-column">
-          <StatsCards />
-          <GoalProgress />
-          <FoodTable />
+          {/* RIGHT PANEL */}
+          <div className="dashboard-right">
+            <Schedule />
+            <Goals />
+          </div>
         </div>
       </div>
     </div>
