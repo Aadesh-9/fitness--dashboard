@@ -3,7 +3,6 @@
   background: #ffffff;
   border-radius: 12px;
   padding: 20px;
-  width: 70%;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
 }
 
@@ -26,7 +25,6 @@
   border-radius: 8px;
   padding: 4px 10px;
   border: 1px solid #e5e7eb;
-  background: #ffffff;
 }
 
 /* LAYOUT */

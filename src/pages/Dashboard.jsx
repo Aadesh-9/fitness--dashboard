@@ -6,6 +6,7 @@ import GoalProgress from "../components/GoalProgress";
 import FoodTable from "../components/FoodTable";
 import Schedule from "../components/Schedule";
 import Goals from "../components/Goals";
+import PremiumCard from "../components/PremiumCard";
 
 const Dashboard = () => {
   return (
@@ -32,6 +33,7 @@ const Dashboard = () => {
           <div className="dashboard-right">
             <Schedule />
             <Goals />
+            <PremiumCard />
           </div>
         </div>
       </div>
