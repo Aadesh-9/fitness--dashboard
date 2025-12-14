@@ -1,7 +1,8 @@
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import Banner from "../components/Banner";
-// later you will import Schedule
+import StatsCards from "../components/StatsCards";
+import GoalProgress from "../components/GoalProgress";
 
 const Dashboard = () => {
   return (
@@ -11,15 +12,16 @@ const Dashboard = () => {
       <div className="content">
         <Header />
 
-        {/* Banner + Schedule Row */}
         <div className="top-row">
           <Banner />
-          <div className="schedule-placeholder">
-            {/* My Schedule will go here in STEP 8 */}
-          </div>
+
+          <div className="schedule-placeholder"></div>
         </div>
 
-        {/* Other sections below */}
+        <div className="left-column">
+          <StatsCards />
+          <GoalProgress />
+        </div>
       </div>
     </div>
   );

@@ -29,11 +29,11 @@
   flex-direction: column;
 }
 
-/* Logo (CENTERED like image) */
+/* Logo */
 .logo {
   display: flex;
   align-items: center;
-  justify-content: center; /* horizontal center */
+  justify-content: center;
   gap: 8px;
   font-weight: 600;
   font-size: 18px;
@@ -44,8 +44,6 @@
 /* Menu */
 .menu {
   list-style: none;
-  padding: 0;
-  margin: 0;
   flex-grow: 1;
 }
 
@@ -55,18 +53,16 @@
   gap: 12px;
   padding: 10px 14px;
   border-radius: 8px;
-  color: #6b7280; /* neutral gray */
+  color: #6b7280;
   cursor: pointer;
   margin-bottom: 6px;
   font-size: 14px;
 }
 
-/* Icons neutral */
 .menu-item .icon {
   color: #6b7280;
 }
 
-/* Active item */
 .menu-item.active {
   background: #ff7a00;
   color: #ffffff;
@@ -76,7 +72,7 @@
   color: #ffffff;
 }
 
-/* Footer */
+/* Sidebar footer */
 .sidebar-footer {
   border-top: 1px solid #f1f1f1;
   padding-top: 16px;
@@ -93,7 +89,6 @@
   border-radius: 12px;
 }
 
-/* Left text */
 .header-left {
   flex: 1;
 }
@@ -102,7 +97,6 @@
   font-size: 10px;
   color: #9ca3af;
   margin-bottom: 2px;
-  font-weight: 400;
 }
 
 .header-left h3 {
@@ -123,11 +117,10 @@
   border: none;
   outline: none;
   background: #fafafa;
-  color: #d3d3d3;
   font-size: 14px;
 }
 
-/* Right icons */
+/* Header icons */
 .header-right {
   display: flex;
   align-items: center;
@@ -154,19 +147,19 @@
   font-weight: 600;
 }
 
-/* Top row: Banner + Schedule */
+/* ===== Top Row ===== */
 .top-row {
   display: flex;
   gap: 20px;
-  margin-bottom: 24px;
+  margin-bottom: 16px; /* reduced gap */
 }
 
-/* Banner should take more space */
+/* Banner width */
 .top-row .banner {
   flex: 2.5;
 }
 
-/* Schedule column */
+/* Schedule placeholder */
 .schedule-placeholder {
   flex: 1;
   background: #ffffff;
@@ -174,18 +167,15 @@
   min-height: 200px;
 }
 
-/*  Banner */
+/* ===== Banner ===== */
 .banner {
   position: relative;
   width: 100%;
   min-height: 220px;
-  border-radius: 20px;
-  margin-bottom: 28px;
+  border-radius: 10px;
   overflow: hidden;
-
   display: flex;
   align-items: center;
-
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -194,7 +184,6 @@
 .banner-overlay {
   position: absolute;
   inset: 0;
-
   background: linear-gradient(
     to right,
     rgba(255, 100, 35, 0.85) 30%,
@@ -202,15 +191,92 @@
     rgba(255, 200, 160, 0.18) 75%,
     rgba(255, 220, 190, 0.05) 100%
   );
-
   z-index: 1;
 }
 
-/* Text */
 .banner-content {
   position: relative;
   z-index: 2;
   padding: 40px;
   max-width: 520px;
   color: #ffffff;
+}
+
+/* ===== Stats Section ===== */
+
+.stats-container {
+  flex: 2.5;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Cards row */
+.stats-cards {
+  width: 70%;
+  display: flex;
+  gap: 20px;
+  margin-bottom: 0;
+}
+
+/* Card */
+.stat-card {
+  flex: 1;
+  height: 190px;
+  border-radius: 8px;
+  padding: 20px;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.stat-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.stat-title {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.stat-value {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Wave */
+.wave {
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 100% 100% 0 0;
+}
+
+/* Card colors */
+.stat-card.workout {
+  background: linear-gradient(135deg, #06b6d4, #22d3ee);
+}
+
+.stat-card.calories {
+  background: linear-gradient(135deg, #fb923c, #f97316);
+}
+
+.stat-card.steps {
+  background: linear-gradient(135deg, #8b5cf6, #a78bfa);
 }

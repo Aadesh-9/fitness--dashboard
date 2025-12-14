@@ -1,0 +1,146 @@
+.goal-progress {
+  margin-top: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 70%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+/* HEADER */
+.goal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.goal-header h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.weekly-select {
+  font-size: 11px;
+  border-radius: 8px;
+  padding: 4px 10px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+
+/* LAYOUT */
+.chart-wrapper {
+  display: flex;
+  gap: 16px;
+}
+
+/* Y AXIS */
+.y-axis {
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #9ca3af;
+  padding-bottom: 18px;
+}
+
+/* CHART AREA */
+.chart-area {
+  position: relative;
+  flex: 1;
+}
+
+/* GRID */
+.grid {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.grid span {
+  height: 1px;
+  background: #eef2f7;
+}
+
+/* CHART */
+.chart {
+  position: relative;
+  height: 180px;
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+/* COLUMN */
+.chart-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 180px; /* ✅ FIXES BAR VISIBILITY */
+}
+
+/* BARS */
+.bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 100%;
+}
+
+.bar {
+  width: 8px;
+  border-radius: 4px;
+}
+
+.bar.workout {
+  background: #06b6d4;
+}
+
+.bar.calories {
+  background: #fb923c;
+}
+
+.bar.steps {
+  background: #8b5cf6;
+}
+
+/* DAY */
+.day {
+  margin-top: 6px;
+  font-size: 11px;
+  color: #6b7280;
+}
+
+/* LEGEND */
+.legend {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.dot.workout {
+  background: #06b6d4;
+}
+
+.dot.calories {
+  background: #fb923c;
+}
+
+.dot.steps {
+  background: #8b5cf6;
+}
