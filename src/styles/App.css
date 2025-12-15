@@ -8,13 +8,16 @@
   font-family: Arial, sans-serif;
 }
 
-/* =========================
-   DASHBOARD LAYOUT
-========================= */
+body {
+  background: #f6f7fb;
+}
+
+/* 🔑 HARD APP CONTAINER (FIXES LOCAL vs DEPLOYED) */
 .dashboard {
   display: flex;
   min-height: 100vh;
   background: #f6f7fb;
+  width: 100%;
 }
 
 /* =========================
@@ -72,8 +75,9 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  height: 100vh;
   padding: 20px;
+  overflow-x: hidden; /* 🔑 */
+  max-width: 100%;
 }
 
 /* =========================
@@ -82,14 +86,16 @@
 .header {
   display: flex;
   align-items: center;
-  gap: 20px;
+  justify-content: space-between; /* 🔑 FIX */
+  gap: 16px;
   background: #ffffff;
   padding: 16px 20px;
   border-radius: 12px;
+  width: 100%;
 }
 
 .header-left {
-  flex: 1;
+  flex-shrink: 0;
 }
 
 .greeting {
@@ -102,22 +108,27 @@
   font-weight: 400;
 }
 
+/* 🔑 SEARCH DOES NOT PUSH ICONS */
 .header-search {
-  flex: 2;
+  flex: 1;
+  max-width: 240px;
 }
 
 .header-search input {
   width: 100%;
-  padding: 12px 16px;
+  padding: 10px 14px;
   border-radius: 12px;
   border: none;
   background: #fafafa;
 }
 
+/* 🔑 ICONS NEVER WRAP */
 .header-right {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
 }
 
 .avatar {
@@ -132,19 +143,16 @@
 }
 
 /* =========================
-   BODY (SCROLL AREA)
+   BODY
 ========================= */
 .dashboard-body {
-  flex: 1;
   display: flex;
   gap: 24px;
-  align-items: flex-start;
-  overflow-y: auto;
-  padding-top: 24px;
+  margin-top: 24px;
 }
 
 /* =========================
-   LEFT & RIGHT PANELS
+   PANELS
 ========================= */
 .dashboard-left {
   flex: 3;
@@ -166,12 +174,13 @@
 .banner {
   position: relative;
   min-height: 220px;
-  border-radius: 10px;
+  border-radius: 12px;
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
   overflow: hidden;
+  width: 100%;
 }
 
 .banner-overlay {
@@ -180,13 +189,13 @@
   background: linear-gradient(
     to right,
     rgba(255, 100, 35, 0.85),
-    rgba(255, 170, 120, 0.2)
+    rgba(255, 170, 120, 0.25)
   );
 }
 
 .banner-content {
   position: relative;
-  padding: 40px;
+  padding: 32px;
   max-width: 520px;
   color: #ffffff;
 }
@@ -197,15 +206,15 @@
 .stats-cards {
   display: flex;
   gap: 20px;
+  width: 100%;
 }
 
 .stat-card {
   flex: 1;
   height: 190px;
-  border-radius: 8px;
+  border-radius: 12px;
   padding: 20px;
   color: #ffffff;
-  position: relative;
 }
 
 .stat-card.workout {
@@ -221,7 +230,7 @@
 }
 
 /* =========================
-   RESPONSIVE – TABLET
+   TABLET
 ========================= */
 @media (max-width: 1024px) {
   .dashboard-body {
@@ -238,7 +247,7 @@
 }
 
 /* =========================
-   RESPONSIVE – MOBILE
+   MOBILE (FINAL FIX)
 ========================= */
 @media (max-width: 768px) {
   /* Sidebar → top bar */
@@ -260,30 +269,27 @@
     display: none;
   }
 
-  /* Header fixed under sidebar */
-  .header {
-    position: fixed;
-    top: 56px;
-    left: 0;
-    width: 100%;
-    border-radius: 0;
-    z-index: 900;
-  }
-
   .dashboard-main {
     padding: 12px;
+    margin-top: 56px;
   }
 
-  .dashboard-body {
-    padding-top: 140px; /* sidebar + header */
+  /* 🔑 HEADER STACKS CLEANLY */
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
   }
 
-  /* Banner full width */
+  .header-search {
+    max-width: 100%;
+  }
+
+  .header-right {
+    justify-content: flex-end;
+  }
+
   .banner {
-    width: 100vw;
-    margin-left: -12px;
-    margin-right: -12px;
-    border-radius: 0;
     min-height: 200px;
   }
 
@@ -292,7 +298,6 @@
     max-width: 100%;
   }
 
-  /* Stats stack */
   .stats-cards {
     flex-direction: column;
   }
