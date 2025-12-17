@@ -247,11 +247,14 @@ body {
   color: #ffffff;
 }
 
-/* ========================= STATS CARDS ========================= */
+/* =========================
+   STATS CARDS (FIX HERE)
+========================= */
 .stats-cards {
   display: flex;
   gap: 20px;
 }
+
 .stat-card {
   flex: 1;
   height: 190px;
@@ -261,102 +264,77 @@ body {
   position: relative;
   overflow: hidden;
 }
+
 .stat-card.workout {
   background: linear-gradient(135deg, #06b6d4, #22d3ee);
 }
+
 .stat-card.calories {
   background: linear-gradient(135deg, #fb923c, #f97316);
 }
+
 .stat-card.steps {
   background: linear-gradient(135deg, #8b5cf6, #a78bfa);
-} /* STATS CONTENT */
+}
+
+/* 🔑 FIXED TEXT ALIGNMENT */
 .stat-header {
   display: flex;
   align-items: center;
   gap: 12px;
-  z-index: 2;
-  position: relative;
+  white-space: nowrap; /* ✅ prevents text breaking */
 }
-.stat-icon {
-  font-size: 20px;
-}
+
 .stat-title {
   font-size: 13px;
   opacity: 0.9;
+  white-space: nowrap; /* ✅ stays in one line */
 }
+
 .stat-value {
   font-size: 20px;
   font-weight: 600;
+  white-space: nowrap; /* ✅ stays in one line */
 }
 
 /* =========================
-   MOBILE – TOP SIDEBAR (SAFE)
+   MOBILE
 ========================= */
 @media (max-width: 768px) {
-  /* Layout stacks vertically */
   .dashboard {
     flex-direction: column;
   }
 
-  /* Sidebar becomes top bar */
   .sidebar {
-    position: relative;
     width: 100%;
-    height: auto;
     padding: 16px;
-    flex-direction: column;
-    box-shadow: none;
     border-bottom: 1px solid #e5e7eb;
   }
 
-  /* Logo centered */
   .logo-wrapper {
     margin-bottom: 12px;
     border-bottom: none;
-    display: flex;
     justify-content: center;
   }
 
-  /* Horizontal menu */
   .menu {
     display: flex;
     gap: 10px;
     overflow-x: auto;
-    padding-bottom: 8px;
-  }
-
-  .menu::-webkit-scrollbar {
-    display: none;
   }
 
   .menu-item {
     white-space: nowrap;
-    flex-shrink: 0;
-    font-size: 13px;
-    padding: 10px 14px;
   }
 
-  /* Footer hidden on mobile */
   .sidebar-footer {
     display: none;
   }
 
-  /* Main content comes below */
-  .dashboard-main {
-    padding: 14px;
-  }
-
-  /* Body stacks */
   .dashboard-body {
     flex-direction: column;
   }
 
-  .dashboard-left,
-  .dashboard-right {
-    width: 100%;
-  }
-
-  /* Stats cards stack */
   .stats-cards {
     flex-direction: column;
   }
@@ -364,10 +342,7 @@ body {
   .stat-card {
     width: 100%;
   }
-}
 
-@media (max-width: 768px) {
-  /* FIX SEARCH BREAK */
   .header-search {
     margin-left: 0;
     margin-right: 0;

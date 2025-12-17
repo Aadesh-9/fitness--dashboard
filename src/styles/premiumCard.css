@@ -108,8 +108,14 @@
 }
 
 .premium-card {
-  position: relative;
-  overflow: hidden;
+  .premium-card {
+    position: relative;
+    min-height: 210px; /* 🔼 increase card height safely */
+    padding: 24px 24px 32px; /* 🔼 extra bottom space for button */
+    border-radius: 18px;
+    background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+    overflow: hidden;
+  }
 }
 
 /* TEXT SHOULD TAKE FULL WIDTH */
