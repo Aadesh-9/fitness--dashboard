@@ -14,7 +14,11 @@ const Header = () => {
       <div className="header-right">
         <span className="icon-circle">🔔</span>
         <span className="icon-circle">⚙️</span>
-        <img className="avatar" src="https://i.pravatar.cc/40" alt="profile" />
+        <img
+          className="avatar"
+          src="https://i.pravatar.cc/40?img=32"
+          alt="profile"
+        />
       </div>
     </div>
   );
