@@ -12,7 +12,9 @@ body {
   background: #f6f7fb;
 }
 
-/* 🔑 HARD APP CONTAINER (FIXES LOCAL vs DEPLOYED) */
+/* =========================
+   APP CONTAINER
+========================= */
 .dashboard {
   display: flex;
   min-height: 100vh;
@@ -76,70 +78,99 @@ body {
   display: flex;
   flex-direction: column;
   padding: 20px;
-  overflow-x: hidden; /* 🔑 */
+  overflow-x: hidden;
   max-width: 100%;
 }
 
 /* =========================
-   HEADER
+   HEADER (FINAL POSITION FIX)
 ========================= */
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* 🔑 FIX */
-  gap: 16px;
   background: #ffffff;
-  padding: 16px 20px;
-  border-radius: 12px;
+  padding: 14px 20px;
+  border-radius: 14px;
   width: 100%;
 }
 
+/* LEFT */
 .header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
   flex-shrink: 0;
 }
 
 .greeting {
-  font-size: 10px;
+  font-size: 11px;
   color: #9ca3af;
+  font-weight: 400;
 }
 
 .header-left h3 {
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
+  color: #111827;
 }
 
-/* 🔑 SEARCH DOES NOT PUSH ICONS */
+/* SEARCH */
 .header-search {
   flex: 1;
-  max-width: 240px;
+  margin-left: 202px;
+  margin-right: 24px;
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #9ca3af;
 }
 
 .header-search input {
   width: 100%;
-  padding: 10px 14px;
-  border-radius: 12px;
+  padding: 10px 14px 10px 38px;
+  border-radius: 10px;
   border: none;
-  background: #fafafa;
+  background: #f9fafb;
+  font-size: 13px;
+  outline: none;
 }
 
-/* 🔑 ICONS NEVER WRAP */
+/* RIGHT */
 .header-right {
   display: flex;
   align-items: center;
-  gap: 14px;
-  flex-wrap: nowrap;
+  gap: 16px;
   flex-shrink: 0;
 }
 
+.icon {
+  font-size: 16px;
+  cursor: pointer;
+  color: #6b7280;
+}
+
+/* AVATAR */
 .avatar {
-  width: 32px;
-  height: 32px;
-  background: #ff7a00;
-  color: #ffffff;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* AVATAR */
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
 }
 
 /* =========================
@@ -187,9 +218,12 @@ body {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    to right,
-    rgba(255, 100, 35, 0.85),
-    rgba(255, 170, 120, 0.25)
+    90deg,
+    rgba(255, 94, 0, 0.98) 0%,
+    rgba(255, 106, 0, 0.95) 30%,
+    rgba(255, 140, 60, 0.6) 55%,
+    rgba(255, 200, 150, 0.25) 75%,
+    rgba(255, 255, 255, 0) 100%
   );
 }
 
@@ -215,6 +249,8 @@ body {
   border-radius: 12px;
   padding: 20px;
   color: #ffffff;
+  position: relative;
+  overflow: hidden;
 }
 
 .stat-card.workout {
@@ -229,26 +265,7 @@ body {
   background: linear-gradient(135deg, #8b5cf6, #a78bfa);
 }
 
-/* =========================
-   TABLET
-========================= */
-@media (max-width: 1024px) {
-  .dashboard-body {
-    flex-direction: column;
-  }
-
-  .stats-cards {
-    flex-wrap: wrap;
-  }
-
-  .stat-card {
-    min-width: calc(50% - 10px);
-  }
-}
-
-/* =========================
-   STATS CARD CONTENT
-========================= */
+/* CONTENT */
 .stat-header {
   display: flex;
   align-items: center;
@@ -271,14 +288,7 @@ body {
   font-weight: 600;
 }
 
-/* =========================
-   DECORATIVE WAVE 
-========================= */
-.stat-card {
-  position: relative;
-  overflow: hidden;
-}
-
+/* WAVE */
 .wave {
   position: absolute;
   bottom: -25px;
@@ -290,7 +300,6 @@ body {
   z-index: 1;
 }
 
-/* Slight variation per card (more natural like Figma) */
 .stat-card.calories .wave {
   bottom: -30px;
 }
@@ -300,24 +309,26 @@ body {
 }
 
 /* =========================
-   MOBILE TUNING
+   TABLET
 ========================= */
-@media (max-width: 768px) {
-  .wave {
-    height: 70px;
-    bottom: -20px;
+@media (max-width: 1024px) {
+  .dashboard-body {
+    flex-direction: column;
   }
 
-  .stat-value {
-    font-size: 18px;
+  .stats-cards {
+    flex-wrap: wrap;
+  }
+
+  .stat-card {
+    min-width: calc(50% - 10px);
   }
 }
 
 /* =========================
-   MOBILE (FINAL FIX)
+   MOBILE
 ========================= */
 @media (max-width: 768px) {
-  /* Sidebar → top bar */
   .sidebar {
     width: 100%;
     height: 56px;
@@ -341,7 +352,6 @@ body {
     margin-top: 56px;
   }
 
-  /* 🔑 HEADER STACKS CLEANLY */
   .header {
     flex-direction: column;
     align-items: stretch;
@@ -356,20 +366,20 @@ body {
     justify-content: flex-end;
   }
 
-  .banner {
-    min-height: 200px;
-  }
-
-  .banner-content {
-    padding: 20px;
-    max-width: 100%;
-  }
-
   .stats-cards {
     flex-direction: column;
   }
 
   .stat-card {
     width: 100%;
+  }
+
+  .wave {
+    height: 70px;
+    bottom: -20px;
+  }
+
+  .stat-value {
+    font-size: 18px;
   }
 }

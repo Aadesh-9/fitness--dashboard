@@ -3,8 +3,8 @@ const Sidebar = () => {
     <aside className="sidebar">
       {/* Logo */}
       <div className="logo">
-        <span className="logo-text">Fitness</span>
-        <span className="logo-icon">🏋️</span>
+        <span className="logo-text">Fitness </span>
+        <span className="logo-icon"> ❚█══█❚</span>
       </div>
 
       {/* Menu */}
