@@ -353,3 +353,13 @@ body {
     gap: 12px;
   }
 }
+
+/* CENTER LOGO (TEXT + DUMBBELL) */
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  justify-content: center;
+}
