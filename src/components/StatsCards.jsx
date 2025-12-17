@@ -26,15 +26,13 @@ const StatsCards = () => {
         <div key={item.title} className={`stat-card ${item.className}`}>
           <div className="stat-header">
             <div className="stat-icon">{item.icon}</div>
-
             <div>
               <p className="stat-title">{item.title}</p>
               <h4 className="stat-value">{item.value}</h4>
             </div>
           </div>
 
-          {/* Decorative wave */}
-          <div className="wave"></div>
+          <div className={`wave wave-${item.className}`}></div>
         </div>
       ))}
     </div>
