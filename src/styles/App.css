@@ -288,65 +288,65 @@ body {
   font-size: 20px;
   font-weight: 600;
 }
+
 /* =========================
-   MOBILE (FINAL & SAFE)
+   MOBILE – TOP SIDEBAR (SAFE)
 ========================= */
 @media (max-width: 768px) {
+  /* Layout stacks vertically */
+  .dashboard {
+    flex-direction: column;
+  }
+
   /* Sidebar becomes top bar */
   .sidebar {
+    position: relative;
     width: 100%;
-    height: 56px;
-    padding: 0;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
+    height: auto;
+    padding: 16px;
+    flex-direction: column;
+    box-shadow: none;
+    border-bottom: 1px solid #e5e7eb;
   }
 
+  /* Logo centered */
   .logo-wrapper {
-    margin: 0;
-    padding: 0;
-    border: none;
-    height: 56px;
+    margin-bottom: 12px;
+    border-bottom: none;
     display: flex;
-    align-items: center;
     justify-content: center;
   }
 
-  .logo {
-    align-items: center;
-    justify-content: center;
+  /* Horizontal menu */
+  .menu {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 8px;
   }
 
-  .menu,
+  .menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .menu-item {
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-size: 13px;
+    padding: 10px 14px;
+  }
+
+  /* Footer hidden on mobile */
   .sidebar-footer {
     display: none;
   }
 
+  /* Main content comes below */
   .dashboard-main {
-    padding: 12px;
-    margin-top: 56px;
+    padding: 14px;
   }
 
-  .header {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .header-search {
-    margin-left: 0;
-    margin-right: 0;
-    max-width: 100%;
-  }
-
-  .header-right {
-    justify-content: flex-end;
-  }
-
-  /* 🔑 THIS FIXES YOUR ISSUE */
+  /* Body stacks */
   .dashboard-body {
     flex-direction: column;
   }
@@ -356,11 +356,25 @@ body {
     width: 100%;
   }
 
+  /* Stats cards stack */
   .stats-cards {
     flex-direction: column;
   }
 
   .stat-card {
     width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* FIX SEARCH BREAK */
+  .header-search {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .header {
+    gap: 12px;
   }
 }
