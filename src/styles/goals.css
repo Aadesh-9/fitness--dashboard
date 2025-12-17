@@ -1,3 +1,6 @@
+/* =========================
+   GOALS CARD
+========================= */
 .goals-card {
   background: #ffffff;
   border-radius: 20px;
@@ -5,7 +8,9 @@
   width: 100%;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 .goals-header {
   display: flex;
   justify-content: space-between;
@@ -14,8 +19,8 @@
 }
 
 .goals-header h4 {
-  font-size: 15px;
-  font-weight: 100;
+  font-size: 16px;
+  font-weight: 500;
   color: #111827;
 }
 
@@ -29,31 +34,50 @@
   gap: 4px;
 }
 
-/* GOAL ITEM */
+.arrow {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ff7a00;
+}
+
+/* =========================
+   GOAL ITEM
+========================= */
 .goal-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: #f9fafb;
-  border-radius: 14px;
+  border-radius: 16px;
   padding: 14px;
   margin-bottom: 12px;
 }
 
-.goal-text strong {
-  display: block;
-  font-size: 14px;
-  font-weight: 200;
-  color: #111827;
+/* =========================
+   TEXT (CRISP & CLEAR)
+========================= */
+.goal-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
-.goal-text p {
+.goal-title {
+  font-size: 14px; /* slightly larger = sharper */
+  font-weight: 500; /* avoids blur */
+  color: #111827; /* strong contrast */
+  margin: 0;
+}
+
+.goal-time {
   font-size: 12px;
-  color: #6b7280;
-  margin-top: 4px;
+  font-weight: 400;
+  color: #6b7280; /* softer but readable */
 }
 
-/* BADGE */
+/* =========================
+   BADGE
+========================= */
 .badge {
   font-size: 12px;
   font-weight: 500;
@@ -64,14 +88,10 @@
   white-space: nowrap;
 }
 
-.goal-text p {
-  font-size: 12px;
-  font-weight: 200;
-  color: #374151;
-  margin: 0;
-}
-
-.goal-text span {
-  font-size: 12px;
-  color: #9ca3af;
+/* =========================
+   FONT SMOOTHING (GLOBAL SAFE)
+========================= */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

@@ -12,16 +12,16 @@ const Goals = () => {
 
       <div className="goal-item">
         <div className="goal-text">
-          <p>ABS & Stretch</p>
-          <span>Saturday, April 14</span>
+          <p className="goal-title">ABS & Stretch</p>
+          <span className="goal-time">Saturday, April 14</span>
         </div>
         <span className="badge">30 Min/day</span>
       </div>
 
       <div className="goal-item">
         <div className="goal-text">
-          <p>Push Up</p>
-          <span>Sunday, April 15</span>
+          <p className="goal-title">Push Up</p>
+          <span className="goal-time">Sunday, April 15</span>
         </div>
         <span className="badge">50 Sets/day</span>
       </div>
