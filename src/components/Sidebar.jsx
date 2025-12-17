@@ -2,9 +2,11 @@ const Sidebar = () => {
   return (
     <aside className="sidebar">
       {/* Logo */}
-      <div className="logo">
-        <span className="logo-text">Fitness </span>
-        <span className="logo-icon"> ❚█══█❚</span>
+      <div className="logo-wrapper">
+        <div className="logo">
+          <span className="logo-text">Fitness</span>
+          <span className="logo-icon">❚█══█❚</span>
+        </div>
       </div>
 
       {/* Menu */}
