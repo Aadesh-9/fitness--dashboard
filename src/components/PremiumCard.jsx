@@ -13,10 +13,8 @@ const PremiumCard = () => {
         <button className="upgrade-btn">Upgrade</button>
       </div>
 
-      {/* CIRCULAR IMAGE */}
-      <div className="premium-image-wrapper">
-        <img src={premiumImg} alt="Premium Fitness" />
-      </div>
+      {/* Decorative image only */}
+      <img className="premium-image" src={premiumImg} alt="Premium Fitness" />
     </div>
   );
 };
