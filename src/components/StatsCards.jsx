@@ -4,7 +4,7 @@ const StatsCards = () => {
       title: "Workout",
       value: "4 hrs",
       className: "workout",
-      icon: "⏱",
+      icon: "❚█══█❚",
     },
     {
       title: "Calories",
